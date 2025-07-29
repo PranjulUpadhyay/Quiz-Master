@@ -1,7 +1,11 @@
-// src/utils/fetchQuestions.js
 import shuffleArray from './shuffleArray';
 
-// Fallback questions in case API fails
+/**
+ * Quiz question fetching utility
+ * Fetches questions from Open Trivia Database API with fallback questions
+ */
+
+// Backup questions in case API is unavailable
 const fallbackQuestions = [
   {
     question: "What is the capital of France?",
@@ -80,23 +84,30 @@ const fallbackQuestions = [
   }
 ];
 
+/**
+ * Main function to fetch quiz questions
+ * Tries to get questions from API first, falls back to local questions if API fails
+ * @returns {Promise<Array>} Array of formatted question objects
+ */
 export async function fetchQuestions() {
   try {
+    // Attempt to fetch from Open Trivia Database API
     const res = await fetch("https://opentdb.com/api.php?amount=15");
     
+    // Check if request was successful
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
     
     const data = await res.json();
     
-    // Check if the API response has the expected structure
+    // Validate API response structure
     if (!data || !data.results || !Array.isArray(data.results) || data.results.length === 0) {
       console.warn('API returned unexpected data structure, using fallback questions');
       return processFallbackQuestions();
     }
     
-    // Process API questions
+    // Format API questions for our app
     return data.results.map((q, idx) => {
       const choices = shuffleArray([...q.incorrect_answers, q.correct_answer]);
       return {
@@ -106,14 +117,17 @@ export async function fetchQuestions() {
         correct: q.correct_answer,
       };
     });
-    
-  } catch (error) {
+      } catch (error) {
+    // If API fails, use local fallback questions
     console.error('Error fetching questions from API:', error);
-    console.log('Using fallback questions instead');
     return processFallbackQuestions();
   }
 }
 
+/**
+ * Process fallback questions into the same format as API questions
+ * @returns {Array} Array of formatted question objects
+ */
 function processFallbackQuestions() {
   return fallbackQuestions.map((q, idx) => {
     const choices = shuffleArray([...q.incorrect_answers, q.correct_answer]);

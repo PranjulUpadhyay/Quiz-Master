@@ -1,25 +1,40 @@
-// src/components/Question.js
 import React from "react";
 
-function Question({ q, idx, chosen, answerHandler }) {
+/**
+ * Display a single quiz question with multiple choice answers
+ * Shows radio buttons for answer selection
+ */
+function Question({ question, selectedAnswer, onAnswerSelect }) {
+  // Don't render anything if no question is provided
+  if (!question) return null;
+
+  // Handle when user clicks on an answer choice
+  const handleAnswerClick = (answer) => {
+    onAnswerSelect(question.id, answer);
+  };
   return (
     <div className="question">
-      <div
-        className="question-title"
-        dangerouslySetInnerHTML={{ __html: q.question }}
-      />
-      <ul>
-        {q.choices.map(c => (
-          <li key={c}>
-            <label>
+      {/* Question text displayed as HTML */}
+      <div className="question-title">
+        <h3 dangerouslySetInnerHTML={{ __html: question.question }} />
+      </div>      
+      {/* List of answer choices with radio buttons */}
+      <ul className="choices-list">
+        {question.choices.map((choice) => (
+          <li key={choice} className="choice-item">
+            <label className="choice-label">
               <input
                 type="radio"
-                name={`q${idx}`}
-                value={c}
-                checked={chosen === c}
-                onChange={() => answerHandler(idx, c)}
+                name={`question-${question.id}`}
+                value={choice}
+                checked={selectedAnswer === choice}
+                onChange={() => handleAnswerClick(choice)}
               />
-              <span dangerouslySetInnerHTML={{ __html: c }} />
+              {/* Answer text displayed as HTML */}
+              <span 
+                className="choice-text"
+                dangerouslySetInnerHTML={{ __html: choice }} 
+              />
             </label>
           </li>
         ))}
