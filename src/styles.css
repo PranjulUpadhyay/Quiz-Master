@@ -1,0 +1,58 @@
+/* src/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #fafcff;
+  margin: 0;
+  padding: 0;
+}
+.quiz-page, .start-page, .report-page {
+  max-width: 700px;
+  margin: 24px auto;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 6px #e0e0e0;
+  padding: 24px;
+}
+input[type="email"] {
+  width: 240px;
+  padding: 8px;
+  margin-right: 12px;
+  font-size: 1rem;
+}
+button {
+  margin: 4px 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+.overview-panel {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.overview-btn {
+  width: 32px; height: 32px;
+  margin: 3px;
+  border-radius: 50%;
+  border: 1px solid #bbb;
+  background: #f2f2f3;
+  cursor: pointer;
+}
+.overview-btn.current { border: 2px solid #3382e8; }
+.overview-btn.visited { background: #e6f7ff; }
+.overview-btn.attempted { background: #a6e7b0; }
+.timer {
+  font-size: 1.5rem;
+  background: #eef2fa;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.timer.danger { color: #c40000; font-weight: bold; animation: blink 1s steps(2, start) infinite;}
+@keyframes blink { to { visibility: hidden; } }
+.question-title { font-size: 1.15rem; margin-bottom: 10px; }
+.report-page table { width: 100%; border-collapse: collapse; }
+.report-page th, .report-page td { padding: 10px 6px; border: 1px solid #ddd; }
+tr.right { background: #eaffec; }
+tr.wrong { background: #ffecec; }
