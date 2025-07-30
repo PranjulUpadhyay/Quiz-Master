@@ -1,5 +1,8 @@
 # QuizMaster - Interactive Quiz Application
 
+🚀 **Live Demo:** (https://quiz-master-ten-nu.vercel.app/)
+📁 **GitHub Repository:** (https://github.com/PranjulUpadhyay/Quiz-Master)
+
 A modern, responsive React-based quiz application that provides an engaging trivia experience with timed challenges and detailed results. This project has been completely refactored and beautified for a premium user experience.
 
 ## ✨ Key Features
