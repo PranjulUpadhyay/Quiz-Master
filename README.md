@@ -76,40 +76,6 @@ my-quiz-app/
 
 ```
 
-## 🎮 How to Use
-
-It's super simple! Just follow these steps:
-
-1. **Enter your email** on the welcome page to get started
-2. **Answer the questions** - you have 30 minutes to complete the quiz
-3. **Navigate easily** - click the numbered buttons to jump between questions, or use Previous/Next
-4. **Submit when done** - hit the submit button to see your results!
-
-That's it! The app will show you how well you did with a detailed breakdown.
-
-## 🎯 Quiz Flow
-
-### Welcome Page
-- Modern welcome interface with feature highlights
-- Email input with validation
-- Loading state while fetching questions
-
-### Quiz Interface
-- Clean, compact layout with no scrolling needed
-- Question counter showing current position
-- Live countdown timer with danger state (red when < 1 minute)
-- Overview panel with color-coded question status:
-  - **Gray**: Unvisited
-  - **Blue**: Visited but not attempted
-  - **Green**: Attempted (answered)
-  - **Yellow**: Current question
-
-### Results Page
-- Overall score percentage with performance message
-- Color-coded score circle (excellent/good/average/poor)
-- Detailed statistics (correct, incorrect, total)
-- Question-by-question breakdown table
-
 ## 🛠️ Available Scripts
 
 ### `npm start`
@@ -121,68 +87,7 @@ Builds the app for production to the `build` folder with optimized performance
 ### `npm run eject`
 **Note: This is a one-way operation!** Ejects from Create React App configuration
 
-*Note: Test script has been removed as testing dependencies were cleaned up during optimization.*
-
-## 🔄 Recent Major Changes & Improvements
-
-### 🎨 **UI/UX Refactoring**
-- **Complete visual overhaul** with modern glass-morphism design
-- **Responsive layout** that works without scrolling on quiz page
-- **Color-coded status indicators** throughout the application
-- **Smooth animations** and gradient backgrounds
-- **Improved email input** with floating labels and clear buttons
-- **Professional results page** with circular score display and detailed breakdown
-
-### 🧹 **Code Cleanup & Optimization**
-- **Removed unused dependencies**:
-  - `@testing-library/jest-dom`, `@testing-library/react`, `@testing-library/user-event`
-  - `web-vitals` dependency (though reportWebVitals.js kept for compatibility)
-- **Deleted test files**: `App.test.js`, `setupTests.js` (not needed for this project)
-- **Cleaned up package.json**: Removed test script and jest ESLint config
-- **Removed unused code**: Eliminated unused imports, variables, and functions
-- **Email prop optimization**: Removed unused email passing between components
-
-### 📝 **Code Documentation**
-- **Added comprehensive comments** to all JavaScript files
-- **JSDoc-style function documentation** with parameter descriptions
-- **Clear inline comments** explaining complex logic and component sections
-- **Beginner-friendly explanations** for all major functionality
-
-### 🔧 **Technical Improvements**
-- **Optimized state management**: Removed unnecessary email state passing
-- **Improved error handling** in API calls and form validation
-- **Performance optimizations**: Eliminated unused console.log statements
-- **Fisher-Yates shuffle algorithm** properly documented in utility function
-- **Clean component architecture** with single responsibility principle
-
-### 🎯 **Enhanced Features**
-- **Timer danger state**: Visual warning when less than 1 minute remains
-- **Question status tracking**: Clear indicators for visited/attempted/current questions
-- **Fallback question system**: 12 curated questions when API fails
-- **Instant answer feedback**: Removed transitions for immediate response
-- **Loading states**: Professional loading animations during question fetching
-
-## 🌐 API Integration
-
 The app uses the [Open Trivia Database API](https://opentdb.com/) to fetch 15 random questions. If the API is unavailable, it automatically falls back to a curated set of local questions to ensure the quiz always works.
-
-## 🎨 Design Features
-
-- **Glass-morphism UI**: Modern frosted glass effect with subtle shadows
-- **Gradient Backgrounds**: Beautiful color transitions throughout the interface
-- **Responsive Design**: Seamlessly adapts to different screen sizes
-- **Smooth Animations**: Polished user experience with CSS transitions
-- **Accessible**: Proper ARIA labels and keyboard navigation support
-
-## 🔧 Technical Details
-
-- **React 18**: Built with the latest React features and hooks
-- **No External UI Libraries**: Custom CSS implementation for full control and performance
-- **Error Handling**: Graceful fallbacks for API failures with local question set
-- **State Management**: Efficient React state handling without external libraries
-- **Performance Optimized**: Minimal bundle size (removed 4 unused dependencies)
-- **Clean Architecture**: Well-documented components with single responsibility
-- **Modern ES6+**: Uses latest JavaScript features and best practices
 
 ### Dependencies (Minimized)
 ```json
@@ -192,24 +97,6 @@ The app uses the [Open Trivia Database API](https://opentdb.com/) to fetch 15 ra
   "react-scripts": "5.0.1"
 }
 ```
-
-*Previously had 7 dependencies, now optimized to only 3 essential ones.*
-
-## 📊 Performance Metrics
-
-- **Bundle Size**: Significantly reduced after dependency cleanup
-- **Load Time**: Faster initial load with optimized assets
-- **Runtime Performance**: Smooth animations and instant UI responses
-- **Memory Usage**: Optimized state management reduces memory footprint
-- **API Resilience**: 100% uptime with fallback question system
-
-## 🧪 Quality Assurance
-
-- **Code Comments**: 100% of functions and components documented
-- **Error Boundaries**: Graceful handling of API failures and edge cases
-- **Input Validation**: Real-time email validation with user feedback  
-- **Accessibility**: Proper ARIA labels and keyboard navigation
-- **Cross-browser**: Tested on Chrome, Firefox, Safari, and Edge
 
 ## 📱 Browser Support
 
