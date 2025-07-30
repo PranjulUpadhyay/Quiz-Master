@@ -25,7 +25,7 @@ A modern, responsive React-based quiz application that provides an engaging triv
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/PranjulUpadhyay/Quiz-Master.git
    cd my-quiz-app
    ```
 
