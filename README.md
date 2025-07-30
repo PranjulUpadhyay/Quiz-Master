@@ -78,10 +78,14 @@ my-quiz-app/
 
 ## 🎮 How to Use
 
-1. **Start**: Enter your email address on the welcome page
-2. **Quiz**: Answer questions within the 30-minute time limit
-3. **Navigate**: Use the overview panel or Previous/Next buttons to move between questions
-4. **Submit**: Complete the quiz and view your detailed results
+It's super simple! Just follow these steps:
+
+1. **Enter your email** on the welcome page to get started
+2. **Answer the questions** - you have 30 minutes to complete the quiz
+3. **Navigate easily** - click the numbered buttons to jump between questions, or use Previous/Next
+4. **Submit when done** - hit the submit button to see your results!
+
+That's it! The app will show you how well you did with a detailed breakdown.
 
 ## 🎯 Quiz Flow
 
@@ -227,36 +231,5 @@ The app uses the [Open Trivia Database API](https://opentdb.com/) to fetch 15 ra
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
-
-## 📋 Development Summary
-
-This QuizMaster application represents a complete transformation from a basic React quiz app to a professional, production-ready application. Here's what was accomplished:
-
-### **Files Modified/Optimized** (11 total):
-1. **`package.json`** - Removed 4 unused dependencies, cleaned scripts
-2. **`src/App.js`** - Removed unused email state management
-3. **`src/components/Question.js`** - Removed unused index parameter
-4. **`src/components/QuizPage.js`** - Added comprehensive comments and structure
-5. **`src/components/ReportPage.js`** - Enhanced with score categories and styling
-6. **`src/components/EmailInput.js`** - Improved validation and UX
-7. **`src/components/StartPage.js`** - Optimized props and loading states
-8. **`src/utils/fetchQuestions.js`** - Cleaned debugging code, added documentation
-9. **`src/utils/shuffleArray.js`** - Added algorithm documentation
-10. **`src/styles.css`** - Complete UI overhaul with modern design
-11. **`README.md`** - Comprehensive documentation update
-
-### **Files Removed** (3 total):
-- `src/App.test.js` - Unused test file
-- `src/setupTests.js` - Unused test configuration  
-- Test dependencies from package.json
-
-### **Key Achievements**:
-- ✅ **43% reduction** in dependencies (7 → 3)
-- ✅ **100% code documentation** coverage
-- ✅ **Modern UI/UX** with glass-morphism design
-- ✅ **Zero unused code** remaining
-- ✅ **Professional README** with complete project overview
-- ✅ **Enhanced user experience** with loading states and animations
-- ✅ **Robust error handling** with API fallbacks
 
 **Enjoy testing your knowledge with QuizMaster! 🧠✨**
