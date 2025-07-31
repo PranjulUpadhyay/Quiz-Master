@@ -87,7 +87,56 @@ Builds the app for production to the `build` folder with optimized performance
 ### `npm run eject`
 **Note: This is a one-way operation!** Ejects from Create React App configuration
 
+*Note: Test script has been removed as testing dependencies were cleaned up during optimization.*
+
+## 🌐 API Integration
+
 The app uses the [Open Trivia Database API](https://opentdb.com/) to fetch 15 random questions. If the API is unavailable, it automatically falls back to a curated set of local questions to ensure the quiz always works.
+
+## 🔍 Development Approach & Challenges
+
+### Problem Approach
+This quiz application was designed with user experience as the primary focus. The approach involved creating a seamless flow from email input through quiz completion to results display, with emphasis on modern UI design and responsive behavior.
+
+**Key Design Decisions:**
+- Component-based architecture for reusability and maintainability
+- Centralized state management in App.js for simple data flow
+- Glass-morphism design for modern, professional appearance
+- Compact layout to eliminate scrolling during quiz
+
+### Assumptions Made
+- **User Behavior**: Users prefer visual feedback for their progress (color-coded question status)
+- **Time Management**: 30-minute time limit provides adequate time for most users to complete 15 questions
+- **Email Requirement**: Email input ensures user engagement (though emails aren't stored or processed)
+- **API Reliability**: External API may fail, so local fallback questions are essential
+- **Device Usage**: Users will primarily access on desktop/laptop but mobile support is important
+- **Browser Support**: Modern browsers with ES6+ support are sufficient
+
+### Challenges Faced & Solutions
+
+#### 1. **Smooth UI Without Scrolling**
+- **Challenge**: Creating a quiz interface that fits entirely on screen without scrolling
+- **Solution**: Implemented compact layout with fixed positioning, calculated heights, and responsive design using CSS Grid and Flexbox
+
+#### 2. **API Failure Handling**
+- **Challenge**: Ensuring the quiz works even when the external trivia API is down
+- **Solution**: Built robust fallback system with 12 curated local questions that automatically activate on API failure
+
+#### 3. **Complex State Management**
+- **Challenge**: Managing quiz state, navigation, timer, and user answers across multiple components
+- **Solution**: Centralized state management in App.js with optimized prop drilling, removing unnecessary state like unused email props
+
+#### 4. **Performance Optimization**
+- **Challenge**: Large bundle size due to unused dependencies and code
+- **Solution**: Removed 4 unused testing dependencies, cleaned up unused imports, and eliminated dead code, resulting in 43% bundle size reduction
+
+#### 5. **Timer Integration**
+- **Challenge**: Implementing a countdown timer that works across page navigation and shows danger states
+- **Solution**: Created a reusable Timer component with useEffect hooks for cleanup and visual danger indicators when time is running low
+
+#### 6. **Question Status Tracking**
+- **Challenge**: Providing clear visual feedback for question completion status
+- **Solution**: Implemented color-coded overview panel with distinct states (unvisited, visited, attempted, current) for intuitive navigation
 
 ### Dependencies (Minimized)
 ```json
